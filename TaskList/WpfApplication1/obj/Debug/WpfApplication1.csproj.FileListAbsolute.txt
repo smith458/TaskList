@@ -1,0 +1,14 @@
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.exe.config
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.csprojResolveAssemblyReference.cache
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\obj\Debug\MainWindow.g.cs
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\obj\Debug\App.g.cs
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1_MarkupCompile.cache
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1_MarkupCompile.lref
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.exe
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\bin\Debug\WpfApplication1.pdb
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\obj\Debug\MainWindow.baml
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.g.resources
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.Properties.Resources.resources
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.exe
+C:\Users\sbsmith\Desktop\Docs\Mine\Code\Class Files\pluralSight\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.pdb

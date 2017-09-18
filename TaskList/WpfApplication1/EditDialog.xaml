@@ -1,0 +1,27 @@
+﻿<Window x:Class="TaskList.EditDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="Task Editor" Height="300" Width="300"
+        WindowStyle="None"
+        WindowStartupLocation="CenterOwner">
+    <Grid FocusManager.FocusedElement="{Binding ElementName=nameBox}">
+        <StackPanel  Height="150" Margin="30,50,0,0"  Width="80" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Label Height="25" Content="Name:" Margin="0,0,0,0" />
+            <Label Height="25" Content="Project:" Margin="0,10,0,0"/>
+            <Label Height="25" Content="Due Date:" Margin="0,10,0,0"/>
+            <Label Height="25" Content="Effort Hours:" Margin="0,12,0,0"/>
+        </StackPanel>
+        <StackPanel Height="150" Margin="110,50,0,0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBox Text="{Binding Name, Mode=TwoWay}" Height="25" TextWrapping="Wrap" Margin="0,0,0,0"/>
+            <TextBox Text="{Binding Project, Mode=TwoWay}" Height="25" TextWrapping="Wrap"  Margin="0,10,0,0"/>
+            <DatePicker SelectedDate="{Binding DueDate, Mode=TwoWay}" Height="25" Margin="0,10,0,0"/>
+            <TextBox  Text="{Binding EffortHours, Mode=TwoWay}" Height="25" TextWrapping="Wrap" Margin="0,10,0,0"/>
+        </StackPanel>
+        <Button x:Name="button" Content="Ok" IsDefault="True"  HorizontalAlignment="Center" Margin="0,175,85,0" VerticalAlignment="Center" Width="75" Click="ok_Click"/>
+        <Button x:Name="button1" Content="Cancel" IsCancel="True" HorizontalAlignment="Center" Margin="85,175,0,0" VerticalAlignment="Center" Width="75" Click="cancel_Click"/>
+    </Grid>
+</Window>
