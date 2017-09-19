@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
+
 namespace TaskList
 {
+    [Serializable]
     public class TaskType : Object, INotifyPropertyChanged
     {
         private string name;

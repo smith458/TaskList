@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="600">
+        Title="MainWindow" Height="350" Width="600"
+        Closing="Window_Closing"
+        >
     <Grid>
         <ListBox x:Name="taskListBox" ItemsSource="{Binding taskList}" DisplayMemberPath="Name" Height="275" Margin="140,20,0,0"  Width="125" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <StackPanel  Height="130" Margin="30,40,0,0"  Width="75" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -15,16 +17,16 @@
         </StackPanel>
         <DockPanel Margin="300,20,0,0" Height="275" Width="230" HorizontalAlignment="Left" VerticalAlignment="Top">
             <StackPanel  Height="275" Width="80" DockPanel.Dock="Left">
-                <Label Content="Name:" Height="25"/>
-                <Label Content="Project:" Height="25"/>
-                <Label Content="DueDate:" Height="25"/>
-                <Label Content="Effort Hours:" Height="25"/>
+                <Label Content="Name:" Height="30"/>
+                <Label Content="Project:" Height="30"/>
+                <Label Content="DueDate:" Height="30"/>
+                <Label Content="Effort Hours:" Height="30"/>
             </StackPanel>
             <StackPanel  Height="275" Width="150" DockPanel.Dock="Right">
-                <Label Content="{Binding SelectedItem.Name, ElementName=taskListBox}" Height="25"/>
-                <Label Content="{Binding SelectedItem.Project, ElementName=taskListBox}" Height="25"/>
-                <Label Content="{Binding SelectedItem.DueDate, ElementName=taskListBox}" Height="25"/>
-                <Label Content="{Binding SelectedItem.EffortHours, ElementName=taskListBox}" Height="25"/>
+                <Label Content="{Binding SelectedItem.Name, ElementName=taskListBox}" Height="30"/>
+                <Label Content="{Binding SelectedItem.Project, ElementName=taskListBox}" Height="30"/>
+                <Label Content="{Binding SelectedItem.DueDate, ElementName=taskListBox}" Height="30"/>
+                <Label Content="{Binding SelectedItem.EffortHours, ElementName=taskListBox}" Height="30"/>
             </StackPanel>
         </DockPanel>
     </Grid>
