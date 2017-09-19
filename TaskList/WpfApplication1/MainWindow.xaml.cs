@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace TaskList
 {
@@ -24,12 +27,27 @@ namespace TaskList
         {
             InitializeComponent();
             this.DataContext = this;
-            taskList = new ObservableCollection<TaskType>()
+
+            filePath = "tasks.xml";
+
+
+            if (File.Exists(filePath))
             {
-                new TaskType() { Name = "Cow", Project = "ThisOne", DueDate=DateTime.Today, EffortHours=4 },
-                new TaskType() { Name = "Chicken", Project = "AnotherOne", DueDate=DateTime.Today, EffortHours=8 },
-                new TaskType() { Name = "Pig", Project = "LastOne", DueDate=DateTime.Today, EffortHours=15 }
-            };
+                XmlSerializer reader = new XmlSerializer(typeof(ObservableCollection<TaskType>));
+                using (StreamReader file = new StreamReader(filePath))
+                {
+                    taskList = (ObservableCollection<TaskType>) reader.Deserialize(file);
+                }
+            }
+            else
+            {
+                taskList = new ObservableCollection<TaskType>()
+                {
+                    new TaskType() { Name = "Cow", Project = "ThisOne", DueDate=DateTime.Today, EffortHours=4 },
+                    new TaskType() { Name = "Chicken", Project = "AnotherOne", DueDate=DateTime.Today, EffortHours=8 },
+                    new TaskType() { Name = "Pig", Project = "LastOne", DueDate=DateTime.Today, EffortHours=15 }
+                };
+            }
         }
 
         private void NewTask_Click(object sender, RoutedEventArgs e)
@@ -69,6 +87,31 @@ namespace TaskList
             }
         }
 
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            /*
+            try
+            {
+                using (StreamWriter myWriter = new StreamWriter(filePath, false))
+                {
+                    XmlSerializer mySerializer = new XmlSerializer(typeof(TaskType));
+                    mySerializer.Serialize(myWriter, taskList);
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            */
+
+            XmlSerializer writer = new XmlSerializer(typeof(ObservableCollection<TaskType>));
+            using (FileStream file = File.Create(filePath))
+            {
+                writer.Serialize(file, taskList);
+            }
+        }
+
         public ObservableCollection<TaskType> taskList { get; set; }
+        private string filePath;
     }
 }
