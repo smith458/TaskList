@@ -8,7 +8,7 @@
         Title="Task Editor" Height="300" Width="300"
         WindowStyle="None"
         WindowStartupLocation="CenterOwner">
-    <Grid FocusManager.FocusedElement="{Binding ElementName=nameBox}">
+    <Grid FocusManager.FocusedElement="{Binding ElementName=NameBox}">
         <StackPanel  Height="150" Margin="30,50,0,0"  Width="80" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Label Height="25" Content="Name:" Margin="0,0,0,0" />
             <Label Height="25" Content="Project:" Margin="0,10,0,0"/>
@@ -16,7 +16,7 @@
             <Label Height="25" Content="Effort Hours:" Margin="0,12,0,0"/>
         </StackPanel>
         <StackPanel Height="150" Margin="110,50,0,0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <TextBox Text="{Binding Name, Mode=TwoWay}" Height="25" TextWrapping="Wrap" Margin="0,0,0,0"/>
+            <TextBox Name="NameBox" Text="{Binding Name, Mode=TwoWay}" Height="25" TextWrapping="Wrap" Margin="0,0,0,0"/>
             <TextBox Text="{Binding Project, Mode=TwoWay}" Height="25" TextWrapping="Wrap"  Margin="0,10,0,0"/>
             <DatePicker SelectedDate="{Binding DueDate, Mode=TwoWay}" Height="25" Margin="0,10,0,0"/>
             <TextBox  Text="{Binding EffortHours, Mode=TwoWay}" Height="25" TextWrapping="Wrap" Margin="0,10,0,0"/>

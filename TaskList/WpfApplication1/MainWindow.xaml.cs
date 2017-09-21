@@ -89,21 +89,6 @@ namespace TaskList
 
         private void Window_Closing(object sender, CancelEventArgs e)
         {
-            /*
-            try
-            {
-                using (StreamWriter myWriter = new StreamWriter(filePath, false))
-                {
-                    XmlSerializer mySerializer = new XmlSerializer(typeof(TaskType));
-                    mySerializer.Serialize(myWriter, taskList);
-                }
-            }
-            catch(Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-            */
-
             XmlSerializer writer = new XmlSerializer(typeof(ObservableCollection<TaskType>));
             using (FileStream file = File.Create(filePath))
             {
