@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -36,7 +37,7 @@ namespace TaskList
                 XmlSerializer reader = new XmlSerializer(typeof(ObservableCollection<TaskType>));
                 using (StreamReader file = new StreamReader(filePath))
                 {
-                    taskList = (ObservableCollection<TaskType>) reader.Deserialize(file);
+                    taskList = (ObservableCollection<TaskType>)reader.Deserialize(file);
                 }
             }
             else
@@ -48,6 +49,8 @@ namespace TaskList
                     new TaskType() { Name = "Pig", Project = "LastOne", DueDate=DateTime.Today, EffortHours=15 }
                 };
             }
+
+            SortTaskList();
         }
 
         private void NewTask_Click(object sender, RoutedEventArgs e)
@@ -94,6 +97,14 @@ namespace TaskList
             {
                 writer.Serialize(file, taskList);
             }
+        }
+
+        private void SortTaskList()
+        {
+            taskList = new ObservableCollection<TaskType>(taskList
+                                        .OrderBy(x => x.Project)
+                                        .ThenBy(x => x.DueDate));
+
         }
 
         public ObservableCollection<TaskType> taskList { get; set; }
